@@ -1,7 +1,7 @@
 import './App.css';
 import Fragment from 'react';
-import NavBar from './components/NavBar';
-import ItemListContainer from "./components/ItemListContainer";
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 
 function App() {
     return (
@@ -10,7 +10,7 @@ function App() {
     < NavBar />
     {/* NavBar contiene a CartWidget */}
 
-    < ItemListContainer gretting="Bienvenido, acá podrás ver el listado de productos de nuestra tienda" />
+    < ItemListContainer gretting="Bienvenido, pronto podrás ver en este espacio el listado de productos de nuestra tienda." />
     
     </div>
   );
