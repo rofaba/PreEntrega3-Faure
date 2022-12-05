@@ -1,17 +1,14 @@
-import './App.css';
-import Fragment from 'react';
+import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 
 function App() {
-    return (
+  return (
     <div>
-     
-    < NavBar />
-    {/* NavBar contiene a CartWidget */}
+      <NavBar />
+      {/* NavBar contiene a CartWidget */}
 
-    < ItemListContainer gretting="Bienvenido, pronto podrás ver en este espacio el listado de productos de nuestra tienda." />
-    
+      <ItemListContainer gretting="Bienvenido, lista de productos disponibles" />
     </div>
   );
 }
