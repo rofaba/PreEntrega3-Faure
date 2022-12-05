@@ -11,16 +11,16 @@ const ItemCount = ({ indice, stock, onAdd }) => {
       setContador(contador - 1);
     }
   };
-  const agregarCarro = (contador) => {
-    if (contador > stock) {
-      alert(
-        "lo siento, no tenemos stock suficiente para agregar " +
-          contador +
-          " productos al carro"
-      );
-    }
-    onAdd(contador);
-  };
+
+  // Disable Button
+  let disableButton;
+  let buttonClass;
+  
+  contador > stock ? disableButton = true : disableButton = false;
+
+  disableButton == false ? buttonClass ="rounded-full text-3xl p-10 w-48 bg-slate-300" : buttonClass = "rounded-full text-3xl p-10 w-48 bg-red-400";
+  
+
   return (
     <div className=" flex flex-col justify-center items-center">
       <h1 className="text-2xl mt-10 underline"> Un producto cualquiera </h1>
@@ -38,13 +38,14 @@ const ItemCount = ({ indice, stock, onAdd }) => {
         </button>
       </div>
 
-      <button
-        className="rounded-full text-3xl p-10 w-48 bg-slate-300"
+      <button disabled = {disableButton} 
+        className = {buttonClass}
         onClick={() => {
           onAdd(contador);
         }}
       >
         Agregar al Carrito
+
       </button>
     </div>
   );

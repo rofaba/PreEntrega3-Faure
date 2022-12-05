@@ -1,6 +1,6 @@
 import props from "react";
 import ItemCount from "../ItemCount/ItemCount.js";
-import { useState } from "react";
+
 
 const ItemListContainer = (props) => {
   const stock = 5;
@@ -9,11 +9,11 @@ const ItemListContainer = (props) => {
   const onAdd = (contador) => {
     if (contador < 1) {
       alert("No agregaste productos al carrito");
-    } 
-    if (contador > stock) { 
-      alert("El número seleccionado es mayor al stock disponible");
-    } else {
-      alert("se agregó " + contador + " productos al carro");
+    }
+    else {
+        if (contador !== 0) {
+        alert("se agregó " + contador + " productos al carro");
+      }
     }
   };
 
@@ -27,5 +27,4 @@ const ItemListContainer = (props) => {
     </div>
   );
 };
-
 export default ItemListContainer;
