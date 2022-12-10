@@ -9,10 +9,10 @@ const Item = (props) => {
         {/* <p> Descripción: {props.description} </p> */}
         <h3> Precio: {props.price} </h3>
         <br></br>
-        <img src={props.pictureURL} />
+        <img className="border-4" src={props.pictureURL} />
         <button className = "border-2 border-solid border-black p-1 m-4" > Ver más </button>
         <br></br>
-        <p> Stock Disponible: {props.stock} </p>
+        {/* <p> Stock Disponible: {props.stock} </p> */}
       </div>
     </div>
   );

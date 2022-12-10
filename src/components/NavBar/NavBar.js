@@ -5,7 +5,7 @@ import './NavBar.css'
 
 const NavBar = () => {
   return (
-    <div style={{ display: "flex" }}>
+    <div className="flex justify center pl-44">
       <nav className="flex flex-row items-center">
         <img
           style={{ width: "200px", height: "200px" }}
@@ -13,7 +13,7 @@ const NavBar = () => {
           src={logo}
         ></img>
         <p className="text-5xl italic">
-          TIENDA IMAGENES
+          TIENDA IMAGES
         </p>
         <ul className=" flex items-center"  style={{margin: "30px" }}>
 
