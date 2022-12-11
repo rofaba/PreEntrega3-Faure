@@ -4,7 +4,7 @@ const CartWidget = () => {
   return (
     <div className="flex items-center">
       <img
-        style={{ width: "120px", height: "120px" }}
+        style={{ width: "100px", height: "100px" }}
         alt="imagen de carro"
         src={carro}
       ></img>

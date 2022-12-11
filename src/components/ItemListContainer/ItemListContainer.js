@@ -4,7 +4,7 @@ import ItemList from "../ItemList/ItemList.js";
 
 const ItemListContainer = (props) => {
   const stock = 5;
-  const indice = 0;
+  const indice = 1;
   let arrayProductos = [
     {
       id: 1,

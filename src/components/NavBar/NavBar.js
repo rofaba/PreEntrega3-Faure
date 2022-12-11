@@ -5,10 +5,10 @@ import './NavBar.css'
 
 const NavBar = () => {
   return (
-    <div className="flex justify center pl-44">
+    <div className="flex justify center pl-96 h-40">
       <nav className="flex flex-row items-center">
         <img
-          style={{ width: "200px", height: "200px" }}
+          style={{ width: "160px", height: "160px" }}
           alt="imagen de logo"
           src={logo}
         ></img>
