@@ -3,25 +3,29 @@ import ItemDetail from "../ItemDetail/ItemDetail"
 
 const ItemDetailContainer = (props) => {
 
-// por ahora IttemDetail recibe un unico producto harcodedado y està incluido en la app.js
+// por ahora ItemDetail recibe un único producto harcodedado y está incluido en la app.js
 
-    let mockingItem = 
-        {
-          id: 1,
-          name: "Producto 1",
-          price: 5.99,
-          description: "Un producto muy bueno",
-          pictureURL: "https://fakeimg.pl/250x100/",
-          stock: 5,
-        };
+    // let mockingItem = 
+    //     {
+    //       id: 1,
+    //       name: "Producto 1",
+    //       price: 5.99,
+    //       description: "Un producto muy bueno",
+    //       pictureURL: "https://fakeimg.pl/250x100/",
+    //       stock: 5,
+    //     };
 
 const [item, setItem] = useState({});
 const [loading, setLoading] = useState(false);
 
 const getItem = new Promise((res, rej) => {
     setTimeout(() => {
-      res(mockingItem);
       setLoading(false);
+
+      fetch('https://fakestoreapi.com/products/2')
+      .then(res => res.json())
+      .then(json => res(json));
+      
     }, 2000);
   });    
 
