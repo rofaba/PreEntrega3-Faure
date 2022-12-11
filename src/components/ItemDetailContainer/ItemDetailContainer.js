@@ -3,6 +3,8 @@ import ItemDetail from "../ItemDetail/ItemDetail"
 
 const ItemDetailContainer = (props) => {
 
+// por ahora IttemDetail recibe un unico producto harcodedado y està incluido en la app.js
+
     let mockingItem = 
         {
           id: 1,
@@ -38,14 +40,14 @@ const getItem = new Promise((res, rej) => {
   return ( 
 <>
 {loading 
-? ( <>
+? ( <div className="h-96">
           <br></br>
           <p className="text-gray-400 animate-bounce text-2xl items-center flex justify-center">
             {" "}
             -  -  obteniendo detalles del producto  -  -{" "}
           </p>
           <br></br>
-        </>
+    </div>
   ) 
 : (
         <div>

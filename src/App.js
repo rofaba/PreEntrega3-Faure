@@ -1,6 +1,7 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
   return (
@@ -9,6 +10,9 @@ function App() {
       {/* NavBar contiene a CartWidget */}
 
       <ItemListContainer gretting="Bienvenido, lista de productos disponibles" />
+      <ItemDetailContainer />
+    
+    
     </div>
   );
 }
