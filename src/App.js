@@ -2,17 +2,27 @@ import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Cart from "./components/Cart/Cart";
+
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div>
       <NavBar />
       {/* NavBar contiene a CartWidget */}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <ItemListContainer gretting="Bienvenido, lista de productos disponibles" />
+          }
+        />
 
-      <ItemListContainer gretting="Bienvenido, lista de productos disponibles" />
-      <ItemDetailContainer />
-    
-    
+        <Route path="/cart" element={<Cart />} />
+
+        <Route path="/itemdetailcontainer" element={<ItemDetailContainer />} />
+      </Routes>
     </div>
   );
 }

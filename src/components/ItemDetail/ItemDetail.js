@@ -28,7 +28,7 @@ const ItemDetail = ({ producto }) => {
           </button>
         </div>
 
-        {/* la api de prueba no devuelve stock - lo fijo en 5 temporalmente */}
+        {/* la API de prueba no devuelve stock - lo fijo en 5 temporalmente */}
         <p className="mt-8"> Stock Disponible: 5 </p>
       </div>
     </div>
