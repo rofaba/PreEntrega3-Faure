@@ -2,9 +2,23 @@ import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = (props) => {
- 
+  const stock = 5;
+  const indice = 1;
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(false);
+
+// contador -------------------------------------
+const onAdd = (contador) => {
+  if (contador < 1) {
+    alert("No agregaste productos al carrito");
+  } else {
+    if (contador !== 0) {
+      alert("se agregó " + contador + " productos al carro");
+    }
+  }
+};
+
+// -----------------------------------------------
 
   const getItem = new Promise((res, rej) => {
     setTimeout(() => {
@@ -46,7 +60,7 @@ const ItemDetailContainer = (props) => {
         </div>
       ) : (
         <div>
-          <ItemDetail producto={item} />
+          <ItemDetail producto={item} stock={stock} onAdd={onAdd} indice={indice}  />
         </div>
       )}
     </>

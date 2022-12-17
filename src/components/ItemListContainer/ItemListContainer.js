@@ -3,11 +3,12 @@ import ItemCount from "../ItemCount/ItemCount.js";
 import ItemList from "../ItemList/ItemList.js";
 import "../../data.json";
 import { Link } from "react-router-dom";
+import data from "../../data.json";
 
 const ItemListContainer = (props) => {
   const stock = 5;
   const indice = 1;
-
+  const {cat1, cat2, catWelcome} = data;
   //arrayProductos contiene la totalidad de los productos
 
   let arrayProductos = [
@@ -42,147 +43,9 @@ const ItemListContainer = (props) => {
       description: "Un producto fabuloso",
       pictureURL: "https://fakeimg.pl/250x100/",
       stock: 7,
-    },
-    // {
-    //   id: 5,
-    //   name: "Producto 1",
-    //   price: 7.99,
-    //   description: "Un producto agregado",
-    //   pictureURL: "https://fakeimg.pl/250x100/",
-    //   stock: 20,
-    // },
-    // {
-    //   id: 6,
-    //   name: "Producto 6",
-    //   price: 5.99,
-    //   description: "Un producto muy bueno",
-    //   pictureURL: "https://fakeimg.pl/250x100/",
-    //   stock: 5,
-    // },
-    // {
-    //   id: 7,
-    //   name: "Producto 7",
-    //   price: 8.99,
-    //   description: "Un producto genial",
-    //   pictureURL: "https://fakeimg.pl/250x100/",
-    //   stock: 10,
-    // },
-    // {
-    //   id: 8,
-    //   name: "Producto 8",
-    //   price: 11.99,
-    //   description: "Un producto increible",
-    //   pictureURL: "https://fakeimg.pl/250x100/",
-    //   stock: 15,
-    // },
-    // {
-    //   id: 9,
-    //   name: "Producto 9",
-    //   price: 19.99,
-    //   description: "Un producto fabuloso",
-    //   pictureURL: "https://fakeimg.pl/250x100/",
-    //   stock: 7,
-    // },
-    // {
-    //   id: 10,
-    //   name: "Producto 10",
-    //   price: 7.99,
-    //   description: "Un producto agregado",
-    //   pictureURL: "https://fakeimg.pl/250x100/",
-    //   stock: 20,
-    // }
+    }
   ];
-
-  //categoriaUno contiene elementos del 1-5 -----------------
-
-  let categoriaUno = [
-    {
-      id: 1,
-      name: "Producto 1",
-      price: 5.99,
-      description: "Un producto muy bueno",
-      pictureURL: "https://fakeimg.pl/250x100/",
-      stock: 5,
-    },
-    {
-      id: 2,
-      name: "Producto 2",
-      price: 8.99,
-      description: "Un producto genial",
-      pictureURL: "https://fakeimg.pl/250x100/",
-      stock: 10,
-    },
-    {
-      id: 3,
-      name: "Producto 3",
-      price: 11.99,
-      description: "Un producto increible",
-      pictureURL: "https://fakeimg.pl/250x100/",
-      stock: 15,
-    },
-    {
-      id: 4,
-      name: "Producto 4",
-      price: 19.99,
-      description: "Un producto fabuloso",
-      pictureURL: "https://fakeimg.pl/250x100/",
-      stock: 7,
-    },
-    {
-      id: 5,
-      name: "Producto 1",
-      price: 7.99,
-      description: "Un producto agregado",
-      pictureURL: "https://fakeimg.pl/250x100/",
-      stock: 20,
-    },
-  ];
-
-  //categoriaDos contiene elementos del 6-10 ---------------
-
-  let categoriaDos = [
-    {
-      id: 6,
-      name: "Producto 6",
-      price: 5.99,
-      description: "Un producto muy bueno",
-      pictureURL: "https://fakeimg.pl/250x100/",
-      stock: 5,
-    },
-    {
-      id: 7,
-      name: "Producto 7",
-      price: 8.99,
-      description: "Un producto genial",
-      pictureURL: "https://fakeimg.pl/250x100/",
-      stock: 10,
-    },
-    {
-      id: 8,
-      name: "Producto 8",
-      price: 11.99,
-      description: "Un producto increible",
-      pictureURL: "https://fakeimg.pl/250x100/",
-      stock: 15,
-    },
-    {
-      id: 9,
-      name: "Producto 9",
-      price: 19.99,
-      description: "Un producto fabuloso",
-      pictureURL: "https://fakeimg.pl/250x100/",
-      stock: 7,
-    },
-    {
-      id: 10,
-      name: "Producto 10",
-      price: 7.99,
-      description: "Un producto agregado",
-      pictureURL: "https://fakeimg.pl/250x100/",
-      stock: 20,
-    },
-  ];
-
+  
   // lógica React ----------------
 
   const [productos, setProductos] = useState([]);
@@ -190,7 +53,7 @@ const ItemListContainer = (props) => {
 
   const promesa = new Promise((res, rej) => {
     setTimeout(() => {
-      res(arrayProductos);
+      res(catWelcome);
       setLoading(false);
     }, 2000);
   });
@@ -245,7 +108,7 @@ const ItemListContainer = (props) => {
             <br></br>
           </Link>
           
-          <ItemCount stock={stock} onAdd={onAdd} indice={indice} />
+          {/* <ItemCount stock={stock} onAdd={onAdd} indice={indice} /> */}
         </div>
       )}
     </div>

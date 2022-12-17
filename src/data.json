@@ -1,5 +1,6 @@
-[
-    {
+{
+  "cat1": [
+        {
       "id": 1,
       "name": "Producto 1",
       "price": 5.99,
@@ -38,7 +39,10 @@
       "description": "Un producto agregado",
       "pictureURL": "https://fakeimg.pl/250x100/",
       "stock": 20
-    },
+    }
+  ],
+
+  "cat2": [
     {
       "id": 6,
       "name": "Producto 6",
@@ -79,4 +83,39 @@
       "pictureURL": "https://fakeimg.pl/250x100/",
       "stock": 20
     }
+  ],
+  "catWelcome": [
+    {
+      "id": 11,
+      "name": "Producto 8w",
+      "price": 11.99,
+      "description": "Un producto de bienvenida",
+      "pictureURL": "https://fakeimg.pl/250x100/",
+      "stock": 15
+    },
+    {
+      "id": 12,
+      "name": "Producto 9w",
+      "price": 19.99,
+      "description": "Una bienvenida fabulosa",
+      "pictureURL": "https://fakeimg.pl/250x100/",
+      "stock": 7
+    },
+    {
+      "id": 13,
+      "name": "Producto 10w",
+      "price": 7.99,
+      "description": "Otro producto de bienvenida",
+      "pictureURL": "https://fakeimg.pl/250x100/",
+      "stock": 20
+    },
+    {
+      "id": 14,
+      "name": "Producto 11w",
+      "price": 7.99,
+      "description": "Un último producto de bienvenida",
+      "pictureURL": "https://fakeimg.pl/250x100/",
+      "stock": 20
+    }
   ]
+}

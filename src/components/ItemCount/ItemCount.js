@@ -25,8 +25,9 @@ const ItemCount = ({ indice, stock, onAdd }) => {
 
   return (
     <div className=" flex flex-col justify-center items-center">
-      <h1 className="text-2xl mt-7 underline"> Un producto cualquiera </h1>
-      <p> Stock disponible: {stock} </p>
+    
+      <p> Stock disponible: 5 </p>
+        {/* {stock}  */}
 
       <div className="flex">
         <button className="w-24 text-5xl" onClick={removeItem}>
