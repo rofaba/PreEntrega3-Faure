@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import axios from 'axios';
+import { useParams } from "react-router-dom";
 
 
 // contador -------------------------------------
@@ -17,15 +18,21 @@ const onAdd = (contador) => {
 //Item --------------------------------
 
 const ItemDetailContainer = (props) => {
+  //la API no devuelve stock, se fija de manera temporal en 5.
   const stock = 5;
   const indice = 1;
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  let {id} = useParams()
+
+useEffect(() => {
     axios
-    .get('https://api.escuelajs.co/api/v1/products?offset=0&limit=1')
-    // .then((response) => console.log(response.data))
+    .get(`https://api.escuelajs.co/api/v1/products/${id}`)
+    // .then((res) => (res.json))
+    // .then((data) => console.log(data))
+
+
     .then((res) => setItem(res.data), Error)
     // .catch((error) => console.log(error))
     .finally(()=> setLoading(false))
@@ -48,6 +55,8 @@ const ItemDetailContainer = (props) => {
           <ItemDetail producto={item} stock={stock} onAdd={onAdd} indice={indice}  />
         </div>
       )}
+
+      <h2 className = "text-center text-xl bg-zinc-200" > Volver a productos</h2>
     </>
   );
 };

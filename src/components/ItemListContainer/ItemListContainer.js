@@ -1,8 +1,6 @@
 import { props, useEffect, useState } from "react";
 import ItemCount from "../ItemCount/ItemCount.js";
 import ItemList from "../ItemList/ItemList.js";
-import "../../data.json";
-import { Link } from "react-router-dom";
 import data from "../../data.json";
 import axios from 'axios'; 
 
@@ -114,13 +112,7 @@ useEffect(() => {
         <div>
           <ItemList lista={productos} />
           
-          <Link to="itemdetailcontainer">
-            <h2 className="text-2xl text-center text-blue-500">
-              {" "}
-              --- Ver el componente ItemDetailContainer solicitado ---{" "}
-            </h2>
-            <br></br>
-          </Link>
+          
           
           {/* <ItemCount stock={stock} onAdd={onAdd} indice={indice} /> */}
         </div>
