@@ -4,6 +4,7 @@ import ItemList from "../ItemList/ItemList.js";
 import "../../data.json";
 import { Link } from "react-router-dom";
 import data from "../../data.json";
+import axios from 'axios'; 
 
 const ItemListContainer = (props) => {
   const stock = 5;
@@ -49,29 +50,42 @@ const ItemListContainer = (props) => {
   // lógica React ----------------
 
   const [productos, setProductos] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  const promesa = new Promise((res, rej) => {
-    setTimeout(() => {
-      res(catWelcome);
-      setLoading(false);
-    }, 2000);
-  });
+  //PROMESA
+  // const promesa = new Promise((res, rej) => {
+  //   setTimeout(() => {
+  //     res(catWelcome);
+  //     setLoading(false);
+  //   }, 2000);
+  // });
 
-  useEffect(() => {
-    setLoading(true);
-    promesa
-      .then((data) => {
-        setProductos(data);
-      })
-      .catch(() => {
-        console.log("ha ocurrido un error al obtener los productos", Error);
-      });
-  }, []);
+  //USEEFFECT CON ARRAY
+  // useEffect(() => {
+  //   setLoading(true);
+  //   promesa
+  //     .then((data) => {
+  //       setProductos(data);
+  //     })
+  //     .catch(() => {
+  //       console.log("ha ocurrido un error al obtener los productos", Error);
+  //     });
+  // }, []);
+
+//USEEFFECT CON API
+useEffect(() => {
+  axios
+  .get('https://api.escuelajs.co/api/v1/products?offset=0&limit=10')
+  
+  .then((res) => setProductos(res.data), Error)
+
+    .catch((error) => console.log(error))
+    .finally(()=> setLoading(false))
+    }, [])
 
   // contador ------------------
 
-  const onAdd = (contador) => {
+  function onAdd(contador) {
     if (contador < 1) {
       alert("No agregaste productos al carrito");
     } else {
@@ -79,7 +93,7 @@ const ItemListContainer = (props) => {
         alert("se agregó " + contador + " productos al carro");
       }
     }
-  };
+  }
 
   return (
     <div className="bg-slate-200 h-auto">
@@ -98,7 +112,7 @@ const ItemListContainer = (props) => {
         </>
       ) : (
         <div>
-          <ItemList productos={productos} />
+          <ItemList lista={productos} />
           
           <Link to="itemdetailcontainer">
             <h2 className="text-2xl text-center text-blue-500">

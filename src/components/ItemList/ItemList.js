@@ -1,19 +1,22 @@
 import Item from "../Item/Item";
 
-const ItemList = ({ productos }) => {
+const ItemList = ( { lista } ) => {
+  
+  // console.log(`post ${lista}`);
+  
   return (
     <div className="grid grid-rows-2 grid-flow-col gap-12 py-6 px-16 justify-center">
       
-      {/* acá verificar que la props productos contenga elementos */}
-
-      {productos.map((product) => (
+      {/* acá falta verificar que la props productos contenga elementos */}
+      
+      {lista.map((product,index) => (
         <Item
-          key={product.id}
+          key={index}
           id={product.id}
-          name={product.name}
+          name={product.title}
           price={product.price}
-          pictureURL={product.pictureURL}
-          stock={product.stock}
+          pictureURL={product.category.image}
+          stock={'50'}
         />
       ))}
     </div>

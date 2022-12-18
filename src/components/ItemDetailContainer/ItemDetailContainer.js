@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import axios from 'axios';
 
-const ItemDetailContainer = (props) => {
-  const stock = 5;
-  const indice = 1;
-  const [item, setItem] = useState({});
-  const [loading, setLoading] = useState(false);
 
 // contador -------------------------------------
 const onAdd = (contador) => {
@@ -18,33 +14,22 @@ const onAdd = (contador) => {
   }
 };
 
-// -----------------------------------------------
+//Item --------------------------------
 
-  const getItem = new Promise((res, rej) => {
-    setTimeout(() => {
-      setLoading(false);
-
-      // llamado a un único producto para probar
-
-      fetch("https://fakestoreapi.com/products/2")
-        .then((res) => res.json())
-        .then((json) => res(json));
-    }, 2000);
-  });
+const ItemDetailContainer = (props) => {
+  const stock = 5;
+  const indice = 1;
+  const [item, setItem] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-    getItem
-      .then((data) => {
-        console.log(data);
-        setItem(data);
-      })
-      .catch(() => {
-        console.log(
-          "ha ocurrido un error al obtener detalles del producto",
-          Error
-        );
-      });
+    axios
+    .get('https://api.escuelajs.co/api/v1/products?offset=0&limit=1')
+    // .then((response) => console.log(response.data))
+    .then((res) => setItem(res.data), Error)
+    // .catch((error) => console.log(error))
+    .finally(()=> setLoading(false))
+      
   }, []);
 
   return (
