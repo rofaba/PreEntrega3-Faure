@@ -24,18 +24,14 @@ const ItemDetailContainer = (props) => {
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
 
-  //id del producto a mostrar en forma detallada
   let {id} = useParams()
 
 useEffect(() => {
     axios
     .get(`https://api.escuelajs.co/api/v1/products/${id}`)
-    // .then((res) => (res.json))
-    // .then((data) => console.log(data))
-
-
+   
     .then((res) => setItem(res.data), Error)
-    // .catch((error) => console.log(error))
+  
     .finally(()=> setLoading(false))
       
   }, []);
