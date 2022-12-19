@@ -15,7 +15,7 @@ const ItemList = ( { lista } ) => {
           id={product.id}
           name={product.title}
           price={product.price}
-          pictureURL={product.category.image}
+          pictureURL={product.images}
           stock={'5'}
         />
       ))}

@@ -8,6 +8,8 @@ const Categories = () => {
   return (
     <>
     <h1 className="text-center text-4xl p-8" > CATEGORIAS </h1>
+    
+
     <div className="flex justify-around gap-4">
      
       {data.map(category => (

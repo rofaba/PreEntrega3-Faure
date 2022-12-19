@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
 
 const Item = (props) => {
   const id=props.id;
+
 
   return (
     <div className="border-4 border-solid border-black p-3">
@@ -14,7 +17,7 @@ const Item = (props) => {
         <br></br>
         <img className="border-4" src={props.pictureURL} alt={props.title} />
         
-        <Link to={`item/${id}`}>
+        <Link to={`/${id}`}>
               <button className = "border-2 border-solid border-black p-1 m-4" > Ver más </button>
         </Link>
         
