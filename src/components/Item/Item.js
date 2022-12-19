@@ -6,7 +6,7 @@ const Item = (props) => {
 
   return (
     <div className="border-4 border-solid border-black p-3">
-      <div className="w-56 h-96 border-2 border-solid border-black bg-slate-100 p-4 rounded-lg text-center">
+      <div className="w-56 h-96 border-2 border-solid border-black72 p-4 rounded-lg text-center">
         <h3> Id: {props.id} </h3>
         <h3> Título: {props.name} </h3>
         {/* <p> Descripción: {props.description} </p> */}
@@ -14,7 +14,7 @@ const Item = (props) => {
         <br></br>
         <img className="border-4" src={props.pictureURL} alt={props.title} />
         
-        <Link to={`${id}`}>
+        <Link to={`item/${id}`}>
               <button className = "border-2 border-solid border-black p-1 m-4" > Ver más </button>
         </Link>
         

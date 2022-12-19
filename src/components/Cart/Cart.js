@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
     return ( 
-        <>
-            <h1 className="text-center text-4xl"> Este será el carrito de compras </h1>
-            <br></br>
+<div>
+      <h1 className="text-center text-4xl"> CARRO DE COMPRAS</h1>
+      <p className="text-center text-2xl"> Acá encontrarás pronto el carro de compras con tus productos favoritos</p>
 
-            <Link to = "/">
-            <p className = "text-center text-xl bg-zinc-200" > VOLVER A HOME </p>
-            </Link>
-            
-        </>
+      <Link to={"/"}>
+        <h2 className="text-center text-xl bg-zinc-200" >Volver a HOME</h2>
+      </Link>
+    </div>
+
        
      );
 }

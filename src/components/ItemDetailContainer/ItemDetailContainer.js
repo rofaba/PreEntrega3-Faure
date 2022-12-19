@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import axios from 'axios';
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 // contador -------------------------------------
@@ -24,6 +24,7 @@ const ItemDetailContainer = (props) => {
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
 
+  //id del producto a mostrar en forma detallada
   let {id} = useParams()
 
 useEffect(() => {
@@ -55,8 +56,9 @@ useEffect(() => {
           <ItemDetail producto={item} stock={stock} onAdd={onAdd} indice={indice}  />
         </div>
       )}
-
-      <h2 className = "text-center text-xl bg-zinc-200" > Volver a productos</h2>
+      <Link to='/'>
+      <h2 className = "text-center text-xl bg-zinc-200 py-4" > VOLVER A PRODUCTOS </h2>
+    </Link>
     </>
   );
 };

@@ -3,6 +3,7 @@ import ItemCount from "../ItemCount/ItemCount.js";
 import ItemList from "../ItemList/ItemList.js";
 import data from "../../data.json";
 import axios from 'axios'; 
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = (props) => {
   const stock = 5;
@@ -49,6 +50,13 @@ const ItemListContainer = (props) => {
 
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
+  let {categoryId} = useParams();
+
+  let callAPI = 'https://api.escuelajs.co/api/v1/products?offset=0&limit=10';
+
+  if (categoryId) {
+     callAPI = `https://api.escuelajs.co/api/v1/categories/${categoryId}/products?offset=0&limit=10`;
+  };
 
   //PROMESA
   // const promesa = new Promise((res, rej) => {
@@ -72,14 +80,15 @@ const ItemListContainer = (props) => {
 
 //USEEFFECT CON API
 useEffect(() => {
+
   axios
-  .get('https://api.escuelajs.co/api/v1/products?offset=0&limit=10')
+  .get(`${callAPI}`)
   
   .then((res) => setProductos(res.data), Error)
 
     .catch((error) => console.log(error))
     .finally(()=> setLoading(false))
-    }, [])
+    }, [categoryId])
 
   // contador ------------------
 
