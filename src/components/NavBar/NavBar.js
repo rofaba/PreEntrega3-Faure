@@ -42,7 +42,7 @@ const NavBar = () => {
               <Link
                 className="px-5 py-3 py-1 text-sm hover:text-lg hover:bg-slate-100 rounded-lg"
                 key={category.id}
-                to={`/category/${category.id}`}
+                to={`/category/${category.name}`}
               >
                 {category.name}
               </Link>

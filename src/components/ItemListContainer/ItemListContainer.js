@@ -10,10 +10,10 @@ const ItemListContainer = (props) => {
   const [loading, setLoading] = useState(true);
   let {categoryId} = useParams();
 
-  let callAPI = 'https://api.escuelajs.co/api/v1/products?offset=0&limit=10';
+  let callAPI = 'https://dummyjson.com/products?limit=10';
 
   if (categoryId) {
-     callAPI = `https://api.escuelajs.co/api/v1/categories/${categoryId}/products?offset=0&limit=10`;
+     callAPI = `https://dummyjson.com/products/category/${categoryId}?limit=10`;
   };
 
 
@@ -23,8 +23,7 @@ useEffect(() => {
   axios
   .get(`${callAPI}`)
   
-  .then((res) => setProductos(res.data), Error)
-
+  .then((res) => setProductos(res.data.products), Error)
     .catch((error) => console.log(error))
     .finally(()=> setLoading(false))
     }, [categoryId])

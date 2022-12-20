@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const Item = (props) => {
-  const id=props.id;
+  const categoryId=props.id;
 
 
   return (
@@ -16,7 +16,7 @@ const Item = (props) => {
         <br></br>
         <img className="border-4" src={props.pictureURL} alt={props.title} />
         
-        <Link to={`/${id}`}>
+        <Link to={`/${categoryId}`}>
               <button className = "border-2 border-solid border-black p-1 m-4" > Ver más </button>
         </Link>
         <br></br>

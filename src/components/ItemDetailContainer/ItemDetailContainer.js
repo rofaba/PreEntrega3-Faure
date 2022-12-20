@@ -28,7 +28,7 @@ const ItemDetailContainer = (props) => {
 
 useEffect(() => {
     axios
-    .get(`https://api.escuelajs.co/api/v1/products/${id}`)
+    .get(`https://dummyjson.com/products/${id}`)
    
     .then((res) => setItem(res.data), Error)
   
