@@ -17,7 +17,7 @@ const {indice, stock, onAdd, producto} = props;
         <div className="flex justify-center"><img className="border-4 p-2 w-48 h-48" src={producto.images[0]} alt="{producto.title}"/>
         </div>
 
-        < ItemCount stock={stock} onAdd={onAdd} indice={indice}/>
+        < ItemCount stock={producto.stock} onAdd={onAdd} indice={indice}/>
        
       </div>
     </div>

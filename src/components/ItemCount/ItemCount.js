@@ -26,7 +26,7 @@ const ItemCount = ({ indice, stock, onAdd }) => {
   return (
     <div className=" flex flex-col justify-center items-center">
     
-      <p> Stock disponible: 5 </p>
+      <p> Stock disponible: {stock} </p>
         
 
       <div className="flex">
