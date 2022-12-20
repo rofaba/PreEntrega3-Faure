@@ -8,7 +8,9 @@ const Cart = () => {
       <p className="text-center text-2xl p-4"> Acá encontrarás pronto el carro de compras con tus productos favoritos</p>
 
       <Link to={"/"}>
-        <h2 className="text-center text-xl bg-zinc-200 p-4" >Volver a HOME</h2>
+      <div className="flex justify-center mb-4">
+          <button className="text-center text-xl bg-zinc-200 p-4 rounded-xl hover:text-xl hover:bg-slate-300 " >Volver a HOME</button>
+      </div>
       </Link>
     </div>
 

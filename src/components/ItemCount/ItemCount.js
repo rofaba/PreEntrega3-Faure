@@ -20,8 +20,8 @@ const ItemCount = ({ indice, stock, onAdd }) => {
   contador > stock ? (disableButton = true) : (disableButton = false);
 
   disableButton == false
-    ? (buttonClass = "rounded-full text-2xl p-2 w-72 m-5 bg-slate-200 hover:bg-slate-300")
-    : (buttonClass = "rounded-full text-2xl p-2 w-72 m-5 bg-slate-100");
+    ? (buttonClass = "rounded-xl  text-2xl p-2 w-72 m-5 bg-slate-300 hover:bg-slate-400")
+    : (buttonClass = "rounded-xl  text-2xl p-2 w-72 m-5 bg-slate-100");
 
   return (
     <div className=" flex flex-col justify-center items-center">
@@ -41,7 +41,7 @@ const ItemCount = ({ indice, stock, onAdd }) => {
         </button>
       </div>
 
-      <button
+      <button 
         disabled={disableButton}
         className={buttonClass}
         onClick={() => {
