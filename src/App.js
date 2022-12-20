@@ -10,7 +10,7 @@ import Categories from "./pages/Categories/Categories"
 
 import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
-
+import data from "./pages/Categories/data.json"
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Route path="/" element={ <ItemListContainer gretting="CATALOGO DE PRODUCTOS" /> }/>
         <Route path="/cart" element={<Cart />} />
         <Route path="/:id" element={<ItemDetailContainer />} />
-        <Route path="/item:id" element={<ItemDetailContainer />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
         <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/howshop" element={<Howshop />} />
         <Route path="/contacto" element={<Contact />} />

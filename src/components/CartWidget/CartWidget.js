@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CartWidget = () => {
   return (
     <Link to="/cart">
-      <div className="flex items-center">
+      <div className="flex items-center pt-6">
         <img
           style={{ width: "100px", height: "100px" }}
           alt="imagen de carro"

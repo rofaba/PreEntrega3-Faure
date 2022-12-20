@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+
 
 
 const Item = (props) => {
@@ -19,10 +19,9 @@ const Item = (props) => {
         <Link to={`/${id}`}>
               <button className = "border-2 border-solid border-black p-1 m-4" > Ver más </button>
         </Link>
-        
-        
         <br></br>
-        <p> Stock Disponible: {props.stock} </p>
+        {/* API no devueve stock, temporalmente lo fijo en 5 unidades */}
+        <p> Stock Disponible: {"5"} </p>
       </div>
     </div>
   );

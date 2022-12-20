@@ -53,7 +53,9 @@ useEffect(() => {
         </div>
       )}
       <Link to='/'>
-      <h2 className = "text-center text-xl bg-zinc-200 py-4" > VOLVER A PRODUCTOS </h2>
+      <div className="flex justify-center mb-4">
+          <button className="text-center text-xl bg-zinc-200 p-4 mt-4 rounded-xl" > Volver a Productos</button>
+      </div>
     </Link>
     </>
   );

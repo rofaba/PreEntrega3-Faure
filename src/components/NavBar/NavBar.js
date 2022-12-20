@@ -11,15 +11,18 @@ const NavBar = () => {
     <div className="flex justify center pl-48 h-40">
       <nav className="flex flex-row items-center">
         <Link to="/">
-          <img
+          <div className="flex items-center">
+            <img
             style={{ width: "160px", height: "160px" }}
             alt="imagen de logo"
             src={logo}
           ></img>
+          <p className="text-4xl italic">TIENDA IMAGES</p>
+          </div>
+          
         </Link>
-
-        <p className="text-4xl italic">TIENDA IMAGES</p>
-
+         
+     
         <ul className=" flex items-center" style={{ margin: "30px" }}>
           <Link to="nosotros">
             <li className="mx-10 text-2xl px-2 py-2 hover:bg-slate-100 rounded-lg ">
@@ -27,13 +30,13 @@ const NavBar = () => {
               <h2> Nosotros </h2>{" "}
             </li>
           </Link>
-
-          <button className="peer px-2 py-2 hover:bg-slate-100 text-2xl rounded-lg relative"          
+<div>
+   <button className="peer px-2 py-2 hover:bg-slate-100 text-2xl rounded-lg relative"          
           >
             {" "}
             Categorias{" "}
           </button>
-          <div className="categorias ml-12 absolute hidden peer-hover:flex hover:flex w-[150px] flex-col items-end bg-white drop-shadow-lg rounded-b-lg">
+          <div className="categorias absolute hidden peer-hover:flex hover:flex w-[130px] flex-col items-start bg-white drop-shadow-lg rounded-b-lg">
 
             {data.map((category) => (
               <Link
@@ -43,7 +46,9 @@ const NavBar = () => {
               >
                 {category.name}
               </Link>
-            ))}
+            ))} 
+</div>
+        
           </div>
 
           <li></li>
