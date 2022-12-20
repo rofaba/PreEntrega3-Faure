@@ -54,7 +54,7 @@ useEffect(() => {
       )}
       <Link to='/'>
       <div className="flex justify-center mb-4">
-          <button className="text-center text-xl bg-zinc-200 p-4 mt-4 rounded-xl" > Volver a Productos</button>
+          <button className="text-center text-xl bg-zinc-200 p-4 mt-4 rounded-xl hover:text-xl hover:bg-slate-300  " > Volver a Productos</button>
       </div>
     </Link>
     </>

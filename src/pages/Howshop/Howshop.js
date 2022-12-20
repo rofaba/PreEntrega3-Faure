@@ -9,7 +9,7 @@ const Howshop = () => {
 
       <Link to={"/"}>
       <div className="flex justify-center mb-4">
-          <button className="text-center text-xl bg-zinc-200 p-4 rounded-xl" >Volver a HOME</button>
+          <button className="text-center text-xl bg-zinc-200 p-4 rounded-xl hover:text-xl hover:bg-slate-300  " >Volver a HOME</button>
       </div>
       </Link>
     </div>

@@ -20,7 +20,7 @@ const ItemCount = ({ indice, stock, onAdd }) => {
   contador > stock ? (disableButton = true) : (disableButton = false);
 
   disableButton == false
-    ? (buttonClass = "rounded-full text-2xl p-2 w-72 m-5 bg-slate-300")
+    ? (buttonClass = "rounded-full text-2xl p-2 w-72 m-5 bg-slate-200 hover:bg-slate-300")
     : (buttonClass = "rounded-full text-2xl p-2 w-72 m-5 bg-slate-100");
 
   return (
