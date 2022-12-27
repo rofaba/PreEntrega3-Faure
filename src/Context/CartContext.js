@@ -6,34 +6,27 @@ const { Provider } = carro;
 
 const CustomProvider = ({ children }) => {
 
-const [products, setProducts] = useState( [] )
-const [quantity, setQuantity] = useState( 0 );
-
-//EJEMPLO
-// products = [ 
-//     {   products: 
-//                 {
-//                 name: "Producto Uno",
-//                 price: 999,
-//                 quantity: 2,
-//                 },
-//         quantity: 1
-//     }
-//]
+const [cartproducts, setCartproducts] = useState( [] )
+const [cartquantity, setCartquantity] = useState( 0 );
 
 // funciones carrito
 
-const addItem = (item, quantity) => {
+const addItem = (item, itemQty) => {
     if(isInCart(item.id)){
-        const testCart = [...products]
-        const testItem = testCart.find(i => i.id === item.id)
-        testItem.quantity += item.quantity
-        setProducts(testCart)
+        const formerCart = [...cartproducts]
+        const formerCartquantity = [...cartquantity]
+        const testItem = formerCart.find(i => i.id === item.id)
+        testItem.qty += itemQty
+        formerCartquantity += itemQty
+        
+        setCartproducts(formerCart)
+        setCartquantity(formerCartquantity)
+
     } else {
-        setProducts(...products, item);
+        setCartproducts(...cartproducts, item);
+        setCartquantity(itemQty)
     }
     
-    setQuantity(...quantity, item);
 }
 
 const removeItem = (itemId) => {
@@ -42,19 +35,17 @@ const removeItem = (itemId) => {
 };
 
 const clearCart = () => {
-    setProducts([]);
-    setQuantity(0);
+    setCartproducts([]);
+    setCartquantity(0);
 };
 
 //usInCartdevuelve booleano
-const isInCart = (id) => products.some(item => item.id === id)
+const isInCart = (id) => cartproducts.some(item => item.id === id)
 
-//objeto con las funciones
-const contexto ={ clearCart, isInCart};
 
 
     return ( 
-        <Provider value = {{ products, contexto }}> 
+        <Provider value = {{ cartproducts, clearCart, isInCart, addItem }}> 
         {children}
         </Provider>
      );

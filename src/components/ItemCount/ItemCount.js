@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ItemCount = ({ indice, stock, onAdd }) => {
+const ItemCount = ({ producto, indice, stock, onAdd }) => {
   const [contador, setContador] = useState(indice);
 
   const addItem = () => {
@@ -45,7 +45,7 @@ const ItemCount = ({ indice, stock, onAdd }) => {
         disabled={disableButton}
         className={buttonClass}
         onClick={() => {
-          onAdd(contador);
+          onAdd(producto, contador);
         }}>
 
         Agregar al carrito

@@ -1,24 +1,53 @@
-import { useEffect, useState } from "react";
+
+import { useEffect, useState, useContext } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import axios from 'axios';
 import { Link, useParams } from "react-router-dom";
+import {carro} from '../../Context/CartContext' 
 
 
 // contador -------------------------------------
-const onAdd = (contador) => {
-  if (contador < 1) {
-    alert("No agregaste productos al carrito");
-  } else {
-    if (contador !== 0) {
-      alert("se agregó " + contador + " productos al carro");
-    }
+const onAdd = (producto, contador) => {
+    const fullProduct = {
+        id: producto.id,
+        name: producto.title,
+        price: producto.price,
+        qty: contador,
   }
-};
+  addItem(producto, contador)
+}
+
+//   addItem(producto, contador)
+//   if (contador < 1) {
+//     alert("No agregaste productos al carrito");
+//   } else {
+//     if (contador !== 0) {
+//       alert("se agregó " + contador + " " + producto.title + " al carro");
+//     }
+//   }
+// };
 
 //Item --------------------------------
 
 const ItemDetailContainer = (props) => {
-  //la API no devuelve stock, se fija de manera temporal en 5.
+ 
+  const { contexto } = useContext(carro)
+  console.log(contexto)
+
+// contador -------------------------------------
+const onAdd = (producto, contador) => {
+    const fullProduct = {
+        id: producto.id,
+        name: producto.title,
+        price: producto.price,
+        qty: contador,
+  }
+  
+  addItem(producto, contador)
+
+}
+
+
   const stock = 5;
   const indice = 1;
   const [item, setItem] = useState({});

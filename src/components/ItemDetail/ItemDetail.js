@@ -4,6 +4,7 @@ import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = (props) => {
 const {indice, stock, onAdd, producto} = props;
+console.log(producto.title)
 
   return (
     <div className="detail flex justify-center items-center leading-7 w-1/3 bg-slate-200 border-2 border-solid border-black p-4 ">
@@ -17,7 +18,7 @@ const {indice, stock, onAdd, producto} = props;
         <div className="flex justify-center"><img className="border-4 p-2 w-48 h-48" src={producto.images[0]} alt="{producto.title}"/>
         </div>
 
-        < ItemCount stock={producto.stock} onAdd={onAdd} indice={indice}/>
+        < ItemCount producto = { producto } stock={producto.stock} onAdd={onAdd} indice={indice}/>
        
       </div>
     </div>
