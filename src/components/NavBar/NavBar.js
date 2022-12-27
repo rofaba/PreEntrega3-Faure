@@ -1,11 +1,18 @@
-import React from "react";
+import React, {useContext} from "react";
 import logo from "../../assets/img/logo.jpeg";
 import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
 import data from "../../pages/Categories/data.json";
+import { carro } from '../../Context/CartContext'
+
 
 const NavBar = () => {
+
+const resultado = useContext(carro)
+console.log(resultado)
+
+
   return (
  
     <div className = "flex justify-center">
@@ -15,9 +22,12 @@ const NavBar = () => {
             <img
               style={{ width: "160px", height: "160px" }}
               alt="imagen de logo"
-              src={logo}
+              src={ logo }
             ></img>
             <p className="text-4xl italic">TIENDA IMAGES</p>
+
+
+
           </div>
         </Link>
 
@@ -62,7 +72,7 @@ const NavBar = () => {
           </Link>
         </ul>
       </nav>
-
+  
       <CartWidget />
     </div>
    
