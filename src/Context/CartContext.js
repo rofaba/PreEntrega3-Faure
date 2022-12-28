@@ -55,7 +55,7 @@ memoryCart = cartproducts;
 
 
     return ( 
-        <Provider value = {{ cartproducts, clearCart, isInCart, addItem }}> 
+        <Provider value = {{ cartproducts, clearCart, isInCart, addItem, removeItem }}> 
         {children}
         </Provider>
      );
