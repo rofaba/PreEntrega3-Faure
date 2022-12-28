@@ -4,12 +4,12 @@ import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
 import data from "../../pages/Categories/data.json";
-import { carro } from '../../Context/CartContext'
+import { cartContext } from '../../Context/CartContext'
 
 
 const NavBar = () => {
 
-const resultado = useContext(carro)
+const resultado = useContext(cartContext)
 console.log(resultado)
 
 

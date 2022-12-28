@@ -1,47 +1,57 @@
 
 import React, { useState, createContext } from "react";
 
-export const carro = createContext();
-const { Provider } = carro;
+export const cartContext = createContext();
+const { Provider } = cartContext;
 
 const CustomProvider = ({ children }) => {
 
 const [cartproducts, setCartproducts] = useState( [] )
-const [cartquantity, setCartquantity] = useState( 0 );
+
+// const [cartquantity, setCartquantity] = useState( 0 );
 
 // funciones carrito
 
-const addItem = (item, itemQty) => {
-    if(isInCart(item.id)){
-        const formerCart = [...cartproducts]
-        const formerCartquantity = [...cartquantity]
-        const testItem = formerCart.find(i => i.id === item.id)
-        testItem.qty += itemQty
-        formerCartquantity += itemQty
-        
-        setCartproducts(formerCart)
-        setCartquantity(formerCartquantity)
+const isInCart = (id)=>{
+    return cartproducts.some(item => item.id === id)
+}
 
-    } else {
-        setCartproducts(...cartproducts, item);
-        setCartquantity(itemQty)
+const addItem = (item) => {
+    
+    if(isInCart(item.id)) {
+        console.log("producto en carro")
+        let cartInProgress = [...cartproducts]
+        let presentItem = cartInProgress.find(elem => elem.id === item.id)
+        presentItem.qty += item.qty;
+        setCartproducts(cartInProgress)
+           
+    } else {  
+
+    console.log(item.id, item.qty)
+    setCartproducts([...cartproducts, item])
     }
     
 }
 
-const removeItem = (itemId) => {
+//eliminar item por Id
+const removeItem = (id) => {
+    let cartInProgress = [...cartproducts]
+    let newFilteredCart = cartInProgress.filter(elem => elem.id === id)
+    setCartproducts(newFilteredCart)       
+}
 
-
-};
-
+//Limpiar Carrito
 const clearCart = () => {
     setCartproducts([]);
-    setCartquantity(0);
+
 };
+//persistencia para /y pruebas
+let memoryCart = [];
+memoryCart = cartproducts;
 
-//usInCartdevuelve booleano
-const isInCart = (id) => cartproducts.some(item => item.id === id)
+// console.log(memoryCart);
 
+// clearCart();
 
 
     return ( 

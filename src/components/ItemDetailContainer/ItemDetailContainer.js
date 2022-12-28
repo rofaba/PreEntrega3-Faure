@@ -1,21 +1,11 @@
-
 import { useEffect, useState, useContext } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import axios from 'axios';
 import { Link, useParams } from "react-router-dom";
-import {carro} from '../../Context/CartContext' 
+import { cartContext } from '../../Context/CartContext' 
 
 
 // contador -------------------------------------
-const onAdd = (producto, contador) => {
-    const fullProduct = {
-        id: producto.id,
-        name: producto.title,
-        price: producto.price,
-        qty: contador,
-  }
-  addItem(producto, contador)
-}
 
 //   addItem(producto, contador)
 //   if (contador < 1) {
@@ -31,19 +21,21 @@ const onAdd = (producto, contador) => {
 
 const ItemDetailContainer = (props) => {
  
-  const { contexto } = useContext(carro)
-  console.log(contexto)
-
+  const { addItem, cartproducts} = useContext(cartContext)
+  
+ 
 // contador -------------------------------------
 const onAdd = (producto, contador) => {
-    const fullProduct = {
+    
+  const itemToAdd= {
         id: producto.id,
         name: producto.title,
         price: producto.price,
         qty: contador,
   }
   
-  addItem(producto, contador)
+  addItem(itemToAdd, contador)
+ 
 
 }
 

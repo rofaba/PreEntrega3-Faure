@@ -4,7 +4,7 @@ import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = (props) => {
 const {indice, stock, onAdd, producto} = props;
-console.log(producto.title)
+
 
   return (
     <div className="detail flex justify-center items-center leading-7 w-1/3 bg-slate-200 border-2 border-solid border-black p-4 ">
