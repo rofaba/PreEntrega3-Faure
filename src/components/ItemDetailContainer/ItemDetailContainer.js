@@ -4,7 +4,6 @@ import axios from 'axios';
 import { Link, useParams } from "react-router-dom";
 import { cartContext } from '../../Context/CartContext' 
 
-
 // contador -------------------------------------
 
 //   addItem(producto, contador)
@@ -26,18 +25,19 @@ const ItemDetailContainer = (props) => {
  
 // contador -------------------------------------
 const onAdd = (producto, contador) => {
-    
-  const itemToAdd= {
+
+      const itemToAdd= {
         id: producto.id,
         name: producto.title,
+        brand: producto.brand,
+        thumbnail: producto.thumbnail,
         price: producto.price,
         qty: contador,
   }
   
   addItem(itemToAdd, contador)
- 
+  }
 
-}
 
 
   const stock = 5;
@@ -75,7 +75,7 @@ useEffect(() => {
       )}
       <Link to='/'>
       <div className="flex justify-center mb-4">
-          <button className="text-center text-xl bg-zinc-200 p-4 mt-4 rounded-xl hover:text-xl hover:bg-slate-300  " > Volver a Productos</button>
+          <button className="text-center text-xl bg-zinc-200 p-4 mt-4 rounded-xl hover:text-xl hover:bg-slate-300  " > Seguir comprando </button>
       </div>
     </Link>
     </>
