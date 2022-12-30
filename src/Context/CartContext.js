@@ -34,10 +34,8 @@ const addItem = (item) => {
 }
 
 //eliminar item por Id
-const removeItem = (id) => {
-    let cartInProgress = [...cartproducts]
-    let newFilteredCart = cartInProgress.filter(elem => elem.id === id)
-    setCartproducts(newFilteredCart)       
+const removeItem = (id)=>{
+    setCartproducts(cartproducts.filter(del => del.id !== id));       
 }
 
 //Limpiar Carrito
