@@ -57,16 +57,31 @@ const Cart = () => {
                   Eliminar{" "}
                 </button>
               </td>
-            </tr>
+
+           
+
+            </tr> 
+         
           ))}
+            <div>
+                   
+                    <h3 className=" flex justify-end m-8 p-6 bg-slate-200" > Total a pagar $ {totalpagar}</h3>
+                    
+            </div>
 
           <br></br>
 
           <div>
-            <div className="flex justify-center mb-4">
-              <button className="p-4 bg-slate-200" onClick={clearCart}>
+            <div className="flex justify-around mb-4">
+              <button className="p-4 bg-slate-200 mx-2" onClick={clearCart}>
                 {" "}
                 Vaciar Carrito{" "}
+              </button>
+              
+              {/* checkout */}
+              <button className="p-4 bg-slate-200 mx-2 disable">
+                {" "}
+                Check Out{" "}
               </button>
             </div>
 

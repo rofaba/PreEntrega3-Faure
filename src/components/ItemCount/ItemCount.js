@@ -31,9 +31,9 @@ if(finishbuy === false) {
   contador === 0 || contador > stock ? (disableButton = true) : (disableButton = false);
 
   if (disableButton === false) {
-      buttonClass = "rounded-xl  text-2xl p-2 w-72 m-5 bg-slate-300 hover:bg-slate-400"
+      buttonClass = "rounded-xl  text-xl p-2 w-72 m-5 bg-slate-300 hover:bg-slate-400"
     } else {
-      buttonClass = "rounded-xl  text-2xl p-2 w-72 m-5 bg-red-100";
+      buttonClass = "rounded-xl  text-xl p-2 w-72 m-5 bg-red-100";
    
   }
 
@@ -43,7 +43,7 @@ if(finishbuy === false) {
 }
 
 //cambia asignaciones para caso de comprar vs terminar en cada producto
-const ejecuteOrder = ()=> {
+const ejecuteOrder66 = ()=> {
   if (finishbuy === false ) {
       onAdd(producto, contador)
       setFinishbuy(true)
@@ -75,7 +75,7 @@ const ejecuteOrder = ()=> {
       <button 
         disabled={disableButton}
         className={buttonClass}
-        onClick = { () => { ejecuteOrder() }
+        onClick = { () => { ejecuteOrder66() }
         }
                 >
        {buttonContent}
