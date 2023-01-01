@@ -9,9 +9,7 @@ import { cartContext } from '../../Context/CartContext'
 
 const NavBar = () => {
 
-const resultado = useContext(cartContext)
-console.log(resultado)
-
+const {totalpagar, qtycartproducts } = useContext(cartContext)
 
   return (
  
@@ -58,12 +56,7 @@ console.log(resultado)
 
           <li></li>
 
-          <Link to="howshop">
-            <li className="mx-10 text-2xl peer px-2 py-2 hover:bg-slate-100 rounded-lg ">
-              {" "}
-              <h2> Cómo comprar </h2>{" "}
-            </li>
-          </Link>
+        
           <Link to="contacto">
             <li className="mx-10 text-2xl py-2 hover:bg-slate-100 rounded-lg ">
               {" "}
@@ -72,9 +65,14 @@ console.log(resultado)
           </Link>
         </ul>
       </nav>
-  
-      <CartWidget />
-    </div>
+      
+      {qtycartproducts !== 0 
+      ?
+      <CartWidget number = {qtycartproducts} />
+      :    
+      <p></p>
+      }
+</div>
    
   );
 };

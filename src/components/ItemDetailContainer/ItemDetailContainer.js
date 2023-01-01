@@ -4,23 +4,11 @@ import axios from 'axios';
 import { Link, useParams } from "react-router-dom";
 import { cartContext } from '../../Context/CartContext' 
 
-// contador -------------------------------------
-
-//   addItem(producto, contador)
-//   if (contador < 1) {
-//     alert("No agregaste productos al carrito");
-//   } else {
-//     if (contador !== 0) {
-//       alert("se agregó " + contador + " " + producto.title + " al carro");
-//     }
-//   }
-// };
-
 //Item --------------------------------
 
 const ItemDetailContainer = (props) => {
  
-  const { addItem, cartproducts} = useContext(cartContext)
+  const { addItem } = useContext(cartContext)
   
  
 // contador -------------------------------------
@@ -36,6 +24,7 @@ const onAdd = (producto, contador) => {
   }
   
   addItem(itemToAdd, contador)
+
   }
 
 

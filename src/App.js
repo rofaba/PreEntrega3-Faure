@@ -4,7 +4,6 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/Cart/Cart";
 import Nosotros from "./pages/Nosotros/Nosotros";
-import Howshop from "./pages/Howshop/Howshop";
 import Contact from "./pages/Contact/Contact";
 import Categories from "./pages/Categories/Categories";
 import CustomProvider from "./Context/CartContext";
@@ -29,7 +28,7 @@ function App() {
           <Route path="/:id" element={<ItemDetailContainer />} />
           <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/nosotros" element={<Nosotros />} />
-          <Route path="/howshop" element={<Howshop />} />
+          
           <Route path="/contacto" element={<Contact />} />
           <Route path="/category" element={<Categories />} />
           <Route

@@ -1,7 +1,7 @@
 import carro from "../../assets/img/carrito.jpeg";
 import { Link } from 'react-router-dom';
 
-const CartWidget = () => {
+const CartWidget = (props) => {
   return (
     <Link to="/cart">
       <div className="flex items-center pt-6">
@@ -10,7 +10,7 @@ const CartWidget = () => {
           alt="imagen de carro"
           src={carro}
         ></img>
-        <span className="text-3xl"> 07 </span>
+        <span className="text-3xl"> {props.number} </span>
       </div>
     </Link>
   );
