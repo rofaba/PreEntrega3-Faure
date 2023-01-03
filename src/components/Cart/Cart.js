@@ -3,14 +3,11 @@ import { Link } from "react-router-dom";
 import { cartContext } from "../../Context/CartContext";
 
 const Cart = () => {
-  const { totalpagar, qtycartproducts, cartproducts, removeItem, clearCart } = useContext(cartContext);
-    
-  console.log(totalpagar)
-  console.log(qtycartproducts)
-
+  const { totalpagar, cartproducts, removeItem, clearCart} = useContext(cartContext);
+ 
   return (
     <div>
-      <h1 className="text-center text-4xl p-4"> CARRO DE COMPRAS</h1>
+      <h1 className="text-center text-3xl p-4"> CARRO DE COMPRAS</h1>
 
       {cartproducts.length === 0 ? (
         <h1 className="text-center text-3xl p-6">
@@ -43,7 +40,12 @@ const Cart = () => {
               <td className="px-16">{product.name} </td>
               <td className="px-16">{product.brand} </td>
               <td className="px-16">$ {product.price}</td>
-              <td className="px-16">{product.qty}</td>
+
+              <td className="px-16 flex justify-center">
+        
+                {product.qty}
+              
+              </td>
               <td className="px-16">$ {product.qty * product.price}</td>
               <td>
                 {" "}
@@ -65,7 +67,7 @@ const Cart = () => {
           ))}
             <div>
                    
-                    <h3 className=" flex justify-end m-8 p-6 bg-slate-200" > Total a pagar $ {totalpagar}</h3>
+                    <h3 className=" flex justify-end m-8 p-4 bg-slate-200 pr-32 text-xl" > Total a pagar $ {totalpagar}</h3>
                     
             </div>
 
@@ -77,7 +79,7 @@ const Cart = () => {
                 {" "}
                 Vaciar Carrito{" "}
               </button>
-              
+
               {/* checkout */}
               <button className="p-4 bg-slate-200 mx-2 disable">
                 {" "}

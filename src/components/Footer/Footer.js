@@ -2,7 +2,7 @@ const Footer = () => {
     return ( 
 <div className="bg-slate-300 flex justify-center items-center py-2">
 
-       <h3> Tienda Images 2022. Trabajando y mejorando </h3>
+       <h3> React Store 2022. Todos los Derechos Reservados ROFABA </h3>
      
      </div>
     );

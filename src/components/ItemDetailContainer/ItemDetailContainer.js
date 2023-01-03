@@ -51,7 +51,7 @@ useEffect(() => {
       {loading ? (
         <div className="h-96">
           <br></br>
-          <p className="text-gray-400 animate-bounce text-2xl items-center flex justify-center">
+          <p className="text-orange-400 animate-bounce text-2xl items-center flex justify-center">
             {" "}
             - - obteniendo detalles del producto - -{" "}
           </p>

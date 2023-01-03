@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 
 const ItemListContainer = (props) => {
 
+
+
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
   let {categoryId} = useParams();
@@ -40,7 +42,7 @@ useEffect(() => {
       {loading ? (
         <>
           <br></br>
-          <p className="text-gray-400 animate-bounce text-2xl items-center flex justify-center">
+          <p className="text-orange-400 animate-bounce text-2xl items-center flex justify-center">
             {" "}
             - - obteniendo productos - -{" "}
           </p>
